@@ -1,0 +1,70 @@
+/* Resetando alguns estilos */
+html, body, h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas: 
+        "sideleft header"
+        "sideleft content"
+        "sideleft footer";
+}
+
+.sideleft{
+    background-color: cornflowerblue;
+    grid-area: sideleft;
+}
+
+.header{
+    background-color: crimson;
+    grid-area: header;
+}
+
+.content{
+    background-color: darkgoldenrod;
+    grid-area: content;
+}
+
+.footer{
+    background-color: darkkhaki;
+    grid-area: footer;
+}
+
+@media ( max-width: 768px ) {
+    .main{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header"
+            "sideleft"
+            "content"
+            "footer";
+    }
+
+    .header{
+        padding: 10px;
+    }
+
+    .sideleft{
+        /* display: none; */
+        padding: 10px;
+    }
+
+    .content{
+        padding: 10px;
+    }
+
+    .footer{
+        padding: 10px;
+    }
+  }
